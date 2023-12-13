@@ -26,9 +26,9 @@ export default function EditUserForm({ id }: { id: number }) {
         fetchUserData();
     }, []);
 
-    const handleInput = (element: { target: { id: string, value: string } }) => {
-        const fieldName = element.target.id;
-        const fieldValue = element.target.value;
+    const handleInput = (e: { target: { id: string, value: string } }) => {
+        const fieldName = e.target.id;
+        const fieldValue = e.target.value;
 
         setFormData((prevState) => ({
             ...prevState,
@@ -63,7 +63,7 @@ export default function EditUserForm({ id }: { id: number }) {
     }
 
     return (
-        <div className="bg-gray-50 px-10 mx-10 rounded-md">
+        <>
             <h1
                 className='text-3xl antialiased font-bold flex justify-center'
             >
@@ -93,10 +93,10 @@ export default function EditUserForm({ id }: { id: number }) {
                         type="submit"
                         className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     >
-                        Cadastrar
+                        Salvar
                     </button>
                 </div>
             </form>
-        </div>
+        </>
     );
 }
