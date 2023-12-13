@@ -28,6 +28,6 @@ Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users
 
 Route::get('/phones', [PhoneController::class, 'index'])->name('phones.index');
 Route::post('/phones', [PhoneController::class, 'store'])->name('phones.store');
-Route::get('/phones/{user}', [PhoneController::class, 'show'])->name('phones.show');
-Route::put('/phones/{user}', [PhoneController::class, 'update'])->name('phones.update');
-Route::delete('/phones/{user}', [PhoneController::class, 'destroy'])->name('phones.destroy');
+Route::get('/phones/{phone}', [PhoneController::class, 'show'])->name('phones.show');
+Route::put('/phones/{phone}', [PhoneController::class, 'update'])->name('phones.update');
+Route::delete('/phones/{phone}', [PhoneController::class, 'destroy'])->name('phones.destroy');

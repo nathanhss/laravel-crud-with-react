@@ -31,7 +31,6 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         try {
-
             if ($this->user->where('document', $request->input('document'))->exists()) {
                 return response()->json([
                     'error' => 'document already registered',
@@ -62,7 +61,7 @@ class UsersController extends Controller
         try {
             $userById = $this->user->find($id);
             if (!$userById) {
-                return response()->json(['Error' => 'User not found'], 404);
+                return response()->json(['error' => 'User not found'], 404);
             }
             return response()->json(['user' => $userById]);
         } catch (Exception $e) {
@@ -82,9 +81,9 @@ class UsersController extends Controller
             ]);
 
             if (!$updated) {
-                return response()->json(['Error' => 'Error while updating user']);
+                return response()->json(['error' => 'Error while updating user']);
             }
-            return response()->json(['Message' => 'User updated sucessfully']);
+            return response()->json(['message' => 'User updated sucessfully']);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Internal Server Error',
