@@ -34,7 +34,7 @@ class UsersController extends Controller
 
             if ($this->user->where('document', $request->input('document'))->exists()) {
                 return response()->json([
-                    'message' => 'document already registered',
+                    'error' => 'document already registered',
                 ], 400);
             }
 
