@@ -37,7 +37,7 @@ export default function UserList() {
         const responseObject = await response.json();
 
         if (responseObject?.error) {
-            alert('Usuário não encontrado');
+            alert('Usuário não encontrado ou possui telefones cadastros');
         } else {
             alert('Usuário excluído com sucesso');
             window.location.reload();
