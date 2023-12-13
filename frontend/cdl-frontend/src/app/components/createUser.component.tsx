@@ -10,9 +10,9 @@ export default function CreateUserForm() {
         document: "",
     });
 
-    const handleInput = (element: any) => {
-        const fieldName = element.target.id;
-        const fieldValue = element.target.value;
+    const handleInput = (e: { target: { id: string, value: string } }) => {
+        const fieldName = e.target.id;
+        const fieldValue = e.target.value;
 
         setFormData((prevState) => ({
             ...prevState,
