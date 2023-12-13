@@ -48,11 +48,6 @@ class UsersController extends Controller
                 'error' => 'Internal Server Error',
                 'details' => $e
             ], 500);
-        } catch (Exception $e) {
-            return response()->json([
-                'error' => 'Internal Server Error',
-                'details' => $e
-            ], 500);
         }
     }
 
