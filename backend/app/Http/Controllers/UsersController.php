@@ -28,15 +28,11 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         try {
-            $user = $this->user->where('document', $request->input('document'));
 
-            if ($user) {
+            if ($this->user->where('document', $request->input('document'))->exists()) {
                 return response()->json([
                     'message' => 'document already registered',
                 ], 400);
@@ -61,9 +57,6 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         try {
@@ -80,9 +73,6 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         try {
@@ -103,9 +93,6 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         try {

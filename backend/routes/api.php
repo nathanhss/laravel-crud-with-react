@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,15 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+
 Route::get('/users', [UsersController::class, 'index'])->name('users.index');
 Route::post('/users', [UsersController::class, 'store'])->name('users.store');
 Route::get('/users/{user}', [UsersController::class, 'show'])->name('users.show');
 Route::put('/users/{user}', [UsersController::class, 'update'])->name('users.update');
 Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
+
+Route::get('/phones', [PhoneController::class, 'index'])->name('phones.index');
+Route::post('/phones', [PhoneController::class, 'store'])->name('phones.store');
+Route::get('/phones/{user}', [PhoneController::class, 'show'])->name('phones.show');
+Route::put('/phones/{user}', [PhoneController::class, 'update'])->name('phones.update');
+Route::delete('/phones/{user}', [PhoneController::class, 'destroy'])->name('phones.destroy');
