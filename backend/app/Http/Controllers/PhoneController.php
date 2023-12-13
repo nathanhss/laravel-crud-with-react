@@ -22,7 +22,7 @@ class PhoneController extends Controller
     {
         try {
             $phones = $this->phone->all();
-            return response()->json(['users' => $phones]);
+            return response()->json(['phones' => $phones]);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'Internal Server Error',
